@@ -1,0 +1,249 @@
+.add-list {
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .add-list .div {
+    background-color: #f6f6f6;
+    width: 414px;
+    height: 896px;
+    position: relative;
+  }
+  
+  .add-list .overlap-group {
+    position: absolute;
+    width: 304px;
+    height: 138px;
+    top: 129px;
+    left: 55px;
+    background-color: #fdb927;
+    border-radius: 5px;
+  }
+  
+  .add-list .text-wrapper {
+    position: absolute;
+    width: 55px;
+    top: 10px;
+    left: 23px;
+    font-family: "Segoe UI-Regular", Helvetica;
+    font-weight: 400;
+    color: #0000004c;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .add-list .vector {
+    position: absolute;
+    width: 268px;
+    height: 1px;
+    top: 38px;
+    left: 21px;
+    object-fit: cover;
+  }
+  
+  .add-list .group {
+    position: absolute;
+    width: 42px;
+    height: 14px;
+    top: 53px;
+    left: 51px;
+  }
+  
+  .add-list .text-wrapper-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Roboto", Helvetica;
+    font-weight: 400;
+    color: #0000004c;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .add-list .rectangle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50px;
+    left: 21px;
+    background-color: #f6f6f6;
+    border-radius: 3px;
+  }
+  
+  .add-list .frame {
+    left: 233px;
+    background-color: #552583;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 4px 16px;
+    position: absolute;
+    top: 102px;
+    border-radius: 5px;
+  }
+  
+  .add-list .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Segoe UI-Bold", Helvetica;
+    font-weight: 700;
+    color: #f6f6f6;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .add-list .div-wrapper {
+    left: 154px;
+    border: 1px solid;
+    border-color: #552583;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 10px;
+    padding: 4px 16px;
+    position: absolute;
+    top: 102px;
+    border-radius: 5px;
+  }
+  
+  .add-list .text-wrapper-4 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Segoe UI-Bold", Helvetica;
+    font-weight: 700;
+    color: #552583;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .add-list .overlap {
+    position: absolute;
+    width: 414px;
+    height: 97px;
+    top: 0;
+    left: 0;
+    background-color: #552583;
+  }
+  
+  .add-list .artboard {
+    position: absolute;
+    width: 147px;
+    height: 56px;
+    top: 32px;
+    left: 16px;
+    object-fit: cover;
+  }
+  
+  .add-list .element-basic-settings {
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    top: 34px;
+    left: 355px;
+  }
+
+  .add-list .text-wrapper {
+    width: 260px;
+    height: 35px;
+    padding: 8px;
+    margin: 10px 23px;
+    top: 2px;
+    left: 3px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: "Segoe UI-Regular", Helvetica;
+    font-size: 18px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+  }
+  
+  .add-list .text-wrapper:hover {
+    border-color: #a3a3a3;
+  }
+  
+  .add-list .text-wrapper:focus {
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
+  }
+
+  .add-list .rectangle {
+    appearance: none;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    transition: background-color 0.2s, border-color 0.2s;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  
+  .add-list .rectangle:checked {
+    background-color: #4CAF50; /* Change to a success color when checked */
+    border-color: #4CAF50;
+  }
+  
+  .add-list .rectangle:checked::after {
+    content: '✔'; /* Unicode character for a checkmark */
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .add-list .frame, .add-list .div-wrapper {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: "Segoe UI-Bold", Helvetica;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .add-list .frame {
+    background-color: #552583;
+    color: #fff;
+    border: none;
+    top: 91px;
+    left: 220px;
+  }
+  
+  .add-list .frame:hover, .add-list .div-wrapper:hover {
+    background-color: #6a3982;
+  }
+  
+  .add-list .frame:active {
+    transform: translateY(2px);
+  }
+  
+  .add-list .div-wrapper {
+    background-color: #fff;
+    color: #552583;
+    border: 1px solid #552583;
+    left: 120px;
+    top: 90px;
+  }
+  
+  .add-list .div-wrapper:active {
+    transform: translateY(2px);
+  }
+
+  /* General styles for interactive elements */
+.add-list button, .add-list input[type="text"], .add-list input[type="checkbox"] {
+    border-radius: 3px;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+  
+  
