@@ -1,0 +1,32 @@
+/* main.css */
+@import url(var.css);
+
+#days_of_week {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  grid-column-end: span 7;
+}
+
+h3 {
+  border-style: solid;
+}
+
+#chunk_of_dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+div {
+  border-style: solid;
+  padding: 25%;
+}
+
+@media screen and (max-width: 1000px) {
+
+  h3 {
+    font-size: x-small;
+  }
+  
+}
