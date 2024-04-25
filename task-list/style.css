@@ -352,3 +352,75 @@
   background-color: #ececec;  /* Light grey background on hover */
 }
 
+/* Hide the actual checkbox input */
+.rectangle-checkbox, .rectangle-2-checkbox {
+  display: none;
+}
+
+/* Basic checkbox styling remains the same */
+.rectangle, .rectangle-2 {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #f6f6f6;
+  border-radius: 3px;
+  margin-right: 10px;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+
+.rectangle-checkbox, .rectangle-2-checkbox {
+  display: none;
+}
+
+.rectangle::before, .rectangle-2::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.rectangle-checkbox:checked + .rectangle::before,
+.rectangle-2-checkbox:checked + .rectangle-2::before {
+  display: block;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Adding strike-through effect */
+.text-wrapper{
+  position: relative;
+  transition: color 0.3s;
+}
+
+.text-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: 2px solid red; /* Color of the strike-through line */
+  transform: scale(0);
+  transform-origin: left center;
+  transition: transform 0.3s;
+}
+
+
+.rectangle-checkbox:checked + .rectangle + .text-wrapper::after,
+.rectangle-2-checkbox:checked + .rectangle-2 + .text-wrapper::after{
+  transform: scale(1);
+}
+
+.text-wrapper:hover {
+  color: #888; /* Optional: change text color on hover */
+}
