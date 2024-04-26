@@ -35,6 +35,7 @@ function displayCalendar(month, year) {
         row.appendChild(cell);
       } else {
         // Display date and make it clickable
+        cell.classList.add('can-hover');
         cell.textContent = date;
         cell.dataset.date = `${year}-${month + 1}-${date}`;
 
@@ -99,8 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to reset the style of all calendar squares
   function resetSquares() {
     allSquares.forEach(square => {
-      square.style.transform = 'scale(1)';
-      square.style.backgroundColor = 'purple'; // Adjust color as needed
+      // square.style.transform = 'scale(1)';
       square.style.zIndex = '0';
     });
   }
@@ -111,11 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (target.tagName === 'TD') {
       // Reset all squares
       resetSquares();
-
       // Enlarge the clicked square
       target.style.transform = 'scale(1.2)';
-      // Change color of the clicked square
-      target.style.backgroundColor = 'orange';
       target.style.zIndex = '1';
     }
   });
