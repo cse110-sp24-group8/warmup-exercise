@@ -18,8 +18,10 @@ table {
 }
 
 #chunk_of_dates {
-  
+  flex: 1;
 }
+
+
 
 #month_title {
   
@@ -28,9 +30,14 @@ table {
 
 td {
   border-style: solid;
-  padding: 25%;
+  padding: 5%;
 }
 
+.individual_day{
+  width: 5px;
+  height: 100px;
+
+}
 @media screen and (max-width: 1000px) {
 
   h3 {

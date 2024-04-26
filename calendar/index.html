@@ -1,104 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Calendar"/>
-    <meta name="keywords" content="HTML, CSS, JavaSctipt"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="robots" content="noindex, nofollow"/>
-    <link rel="stylesheet" href="style/main.css">
-    <title>Calendar</title>
-  </head>
-  <body>
-    <header>
-      <!--Future Header-->
-    </header>
-    <main>
-
-      <calendar-component>
-        <section id="general_title">
-          <h2>Calendar</h2>
-
-          <section id="month_controls">
-            <button id="prev_month"></button>
-            <h1 id="month_title">Month</h1>
-            <button id="next_month"></button>
-          </section>
-
-          <section id="year_controls">
-            <button id="prev_year"></button>
-            <h2 id="year_title">Year</h2>
-            <button id="next_year"></button>
-          </section>
-
-        </section>
-
-        <section id="date_layouot">
-          <section id="chunk_of_dates">
-            <table>
-              <tr id="days_of_week">
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
-          </section>
-        </section>
-
-      </calendar-component>
-
-    </main>
-  </body>
-
-
-
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calendar</title>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  #nav-buttons {
+    margin-bottom: 10px;
+  }
+  .highlight{
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+<div id="nav-buttons">
+  <button onclick="changeMonth(-1)">Previous Month</button>
+  <button onclick="changeMonth(1)">Next Month</button>
+</div>
+<h2 id="monthYear"></h2>
+<table>
+  <thead>
+    <tr id="days_of_week">
+      <th>Sun</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Sat</th>
+    </tr>
+  </thead>
+  <tbody id="calendar-body">
+    <!-- Calendar days will be dynamically created here -->
+  </tbody>
+</table>
+<script src="script.js"></script>
+</body>
 </html>
