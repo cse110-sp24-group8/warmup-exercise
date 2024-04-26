@@ -10,97 +10,31 @@
 
   <body>
     <div class="to-do-list">
+      
       <div class="div">
-        <div class="overlap">
-          <div class="group">
-            <label class="checkbox-container">
-              <input type="checkbox" class="rectangle-checkbox">
-              <span class="rectangle"></span>
-              <div class="text-wrapper">Learning UI/UX</div>
-            </label>
+        <div class = "tasks-container">
+          <div class="overlap">
+            <div class="group">
+              <label class="checkbox-container">
+                <input type="checkbox" class="rectangle-checkbox">
+                <span class="rectangle"></span>
+                <div class="text-wrapper">Add new task-list to get started</div>
+                <button class="delete-btn">&#x2716;</button>
+              </label>
+            </div>
           </div>
-        </div>
+        </div>  
+      </div>
 
-        <div class="overlap-group">
-          <div class="group-2">
-            <label class="checkbox-container">
-              <input type="checkbox" class="rectangle-2-checkbox">
-              <span class="rectangle-2"></span>
-              <div class="text-wrapper">Hangout with friends</div>
-            </label>
-          </div>
-        </div>
-        
-        <div class="overlap-2">
-          <div class="group-3">
-            <label class="checkbox-container">
-              <input type="checkbox" class="rectangle-2-checkbox">
-                <span class="rectangle-2"></span>
-                <div class="text-wrapper">Exercise</div>
-            </label>
-          </div>
-          <img class="polygon" src="img/polygon-2.svg" />
-        </div>
-
-        <div class="group-wrapper">
-          <div class="group-4">
-            <label class="checkbox-container">
-              <input type="checkbox" class="rectangle-2-checkbox">
-              <span class="rectangle-2"></span>
-              <div class="text-wrapper">Play game</div>
-            </label>
-          </div>
-        </div>
-        
-        <div class="overlap-3">
-          <div class="group-5">
-            <label class="checkbox-container">
-              <input type="checkbox" class="rectangle-2-checkbox">
-              <span class="rectangle-2"></span>
-              <div class="text-wrapper-2">Homework</div>
-            </label>
-          </div>
-
-          <div class="group-6">
-            <label class="checkbox-container">
-              <input type="checkbox" class="rectangle-2-checkbox">
-              <span class="rectangle-2"></span>
-              <div class="text-wrapper-2">Sport</div>
-            </label>
-          </div>
-
-
-          <div class="group-7">
-            <label class="checkbox-container">
-              <input type="checkbox" class="rectangle-2-checkbox">
-              <span class="rectangle-2"></span>
-              <div class="text-wrapper-2">Mathematic</div>
-            </label>
-          </div>
-
-
-          <div class="group-8">
-            <label class="checkbox-container">
-              <input type="checkbox" class="rectangle-2-checkbox">
-              <span class="rectangle-2"></span>
-              <div class="text-wrapper-2">Science</div>
-            </label>
-          </div>
-
-          <img class="img" src="img/polygon-1.svg" />
-        
-        </div>
-
-        <div class="union-wrapper">
-          <a href="addlist.html">
-            <button class = "button-style">
+      <div class="union-wrapper">
+        <a href="addlist.html">
+          <button class = "button-style">
             <img class="union" src="img/union.svg" />
-            </button>
-          </a>
-        </div>
+          </button>
+        </a>
+      </div>
         
-        <div class="overlap-4">
-
+       <div class="overlap-4">
           <button class = "button-style">
             <div class="element-basic-settings">
               <img class="icon" src="img/icon-3.svg" />
@@ -111,20 +45,9 @@
         
         <div class="element-basic-trash-wrapper"><img class="element-basic-trash" src="img/24-basic-trash.png" /></div>
         
-        <div class="div-wrapper">
-          <div class="group-9">
-            <label class="checkbox-container">
-              <input type="checkbox" class="rectangle-checkbox">
-              <span class="rectangle"></span>
-              <div class="text-wrapper">Read a book</div>
-            </label>
-          </div>
-        </div>
-        
         <div class = "bottom-fixed-container">
           <div class="rectangle-3"></div>
           
-
           <div class="ellipse"></div>
 
           <button class = "button-style">
@@ -138,6 +61,98 @@
         </div>
       </div>
     </div>
+    <script>
+      //adding task to the list 
+      document.addEventListener("DOMContentLoaded", function() {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        const tasksContainer = document.querySelector('.tasks-container');
+    
+        tasksContainer.innerHTML = '';
+    
+        tasks.forEach(task => {
+            const newTaskHtml = `
+                <div class="overlap" data-id="${task.id}">
+                    <div class="group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="rectangle-checkbox" ${task.completed ? 'checked' : ''}>
+                            <span class="rectangle"></span>
+                            <div class="text-wrapper">${task.text}</div>
+                            <button class="delete-btn">&#x2716;</button>
+                        </label>
+                    </div>
+                </div>
+            `;
+            tasksContainer.insertAdjacentHTML('beforeend', newTaskHtml);
+        });
+    });    
+    </script>
+
+    <script>
+      //bluring the task-list bar and move the task to the bottom of the list
+      document.addEventListener("DOMContentLoaded", function() {
+        const tasksContainer = document.querySelector('.tasks-container');
+        const tasks = document.querySelectorAll('.group');
+    
+        tasks.forEach(task => {
+          const checkbox = task.querySelector('.rectangle-checkbox');
+          const textWrapper = task.querySelector('.text-wrapper');
+    
+          // Function to handle checkbox change event
+          function handleCheckboxChange() {
+            if (checkbox.checked) {
+              textWrapper.classList.add('text-completed');
+              setTimeout(() => {
+                task.parentElement.classList.add('blur-effect');
+                tasksContainer.appendChild(task.parentElement);
+              }, 300);
+            } else {
+              textWrapper.classList.remove('text-completed');
+              task.parentElement.classList.remove('blur-effect');
+            }
+          }
+    
+          // Function to handle text-wrapper click event
+          function handleTextWrapperClick(event) {
+            event.stopPropagation(); // Prevent checkbox click event from firing
+          }
+    
+          // Add event listener for checkbox change event
+          checkbox.addEventListener('change', handleCheckboxChange);
+    
+          // Add event listener for text-wrapper click event
+          textWrapper.addEventListener('click', handleTextWrapperClick);
+        });
+      });
+    </script>
+
+    <script>
+      //delete button functionality
+      document.addEventListener("DOMContentLoaded", function() {
+        const tasksContainer = document.querySelector('.tasks-container');
+    
+        tasksContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('delete-btn')) {
+                const taskElement = event.target.closest('.overlap');
+                const taskId = parseInt(taskElement.dataset.id); // Make sure IDs are integers
+                let tasks = JSON.parse(localStorage.getItem('tasks'));
+                tasks = tasks.filter(task => task.id !== taskId);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+                taskElement.remove();
+            }
+        });
+    });
+    
+    
+    </script>
+    
+    
+    
+        
+    
+
+    
+    
+      
   </body>
 
 </html>

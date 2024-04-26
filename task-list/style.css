@@ -1,27 +1,47 @@
+/*background- scrolling prevention*/
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 .to-do-list {
-  background-color: #f6f6f6;
+  background: linear-gradient(135deg, #8E44AD, #F1Ca0F);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .to-do-list .div {
   background-color: #f6f6f6;
-  overflow: hidden;
+  overflow: auto;
   width: 414px;
-  height: 896px;
+  height: 100vh;
   position: relative;
+  margin-bottom: 20px;
+}
+
+.tasks-container {
+  position: relative;  
+  padding: 10px;  
+  min-height: 120%;  
+  overflow-y: auto;
 }
 
 .to-do-list .overlap {
-  position: absolute;
+  position: relative;
   width: 350px;
   height: 63px;
-  top: 127px;
+  top: 100px;
   left: 32px;
   background-color: #fdb927;
   border-radius: 5px;
+  margin-top: 5px;
 }
 
 .to-do-list .group {
@@ -30,6 +50,11 @@
   height: 24px;
   top: 20px;
   left: 26px;
+}
+
+.group
+{
+  margin: 10px;
 }
 
 .to-do-list .rectangle {
@@ -54,24 +79,6 @@
   line-height: normal;
 }
 
-.to-do-list .overlap-group {
-  position: absolute;
-  width: 350px;
-  height: 63px;
-  top: 473px;
-  left: 32px;
-  background-color: #fdb927;
-  border-radius: 5px;
-}
-
-.to-do-list .group-2 {
-  position: relative;
-  width: 213px;
-  height: 24px;
-  top: 20px;
-  left: 26px;
-}
-
 .to-do-list .rectangle-2 {
   position: absolute;
   width: 20px;
@@ -82,103 +89,12 @@
   border-radius: 3px;
 }
 
-.to-do-list .overlap-2 {
-  position: absolute;
-  width: 350px;
-  height: 63px;
-  top: 556px;
-  left: 32px;
-  background-color: #fdb927;
-  border-radius: 5px;
-}
-
-.to-do-list .group-3 {
-  position: absolute;
-  width: 100px;
-  height: 24px;
-  top: 20px;
-  left: 26px;
-}
-
 .to-do-list .polygon {
   position: absolute;
   width: 8px;
   height: 15px;
   top: 24px;
   left: 14px;
-}
-
-.to-do-list .group-wrapper {
-  position: absolute;
-  width: 350px;
-  height: 63px;
-  top: 639px;
-  left: 32px;
-  background-color: #fdb927;
-  border-radius: 5px;
-}
-
-.to-do-list .group-4 {
-  position: relative;
-  width: 120px;
-  height: 24px;
-  top: 20px;
-  left: 26px;
-}
-
-.to-do-list .overlap-3 {
-  position: absolute;
-  width: 350px;
-  height: 160px;
-  top: 210px;
-  left: 32px;
-  background-color: #fdb927;
-  border-radius: 5px;
-}
-
-.to-do-list .group-5 {
-  position: absolute;
-  width: 120px;
-  height: 21px;
-  top: 22px;
-  left: 26px;
-}
-
-.to-do-list .text-wrapper-2 {
-  position: absolute;
-  top: 0;
-  left: 30px;
-  font-family: "Roboto", Helvetica;
-  font-weight: 700;
-  color: #552583;
-  font-size: 18px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.to-do-list .group-6 {
-  position: absolute;
-  width: 77px;
-  height: 21px;
-  top: 53px;
-  left: 52px;
-}
-
-.to-do-list .group-7 {
-  position: absolute;
-  width: 129px;
-  height: 21px;
-  top: 84px;
-  left: 52px;
-}
-
-.to-do-list .group-8 {
-  position: absolute;
-  width: 97px;
-  height: 21px;
-  top: 115px;
-  left: 52px;
 }
 
 .to-do-list .img {
@@ -201,6 +117,11 @@
   background-color: var(--variable-collection-laker-purple);
   border-radius: 34.5px;
   box-shadow: 2px 2px 15px #0000004c;
+}
+
+.union-wrapper:hover
+{
+  background-color: rgb(88, 101, 174);
 }
 
 .to-do-list .union {
@@ -267,27 +188,9 @@
   left: -1295px;
 }
 
-.to-do-list .div-wrapper {
-  position: absolute;
-  width: 350px;
-  height: 63px;
-  top: 390px;
-  left: 32px;
-  background-color: #fdb927;
-  border-radius: 5px;
-}
-
-.to-do-list .group-9 {
-  position: relative;
-  width: 137px;
-  height: 24px;
-  top: 19px;
-  left: 26px;
-}
-
 .to-do-list .bottom-fixed-container {
   position: fixed;
-  bottom: 0;  /* Fixed at the bottom of the viewport */
+  bottom: 0; 
   left: 50%;  /* Center horizontally */
   transform: translateX(-50%);  /* Center the container */
   width: 414px;  /* Set a specific width for the container */
@@ -302,7 +205,7 @@
   position: absolute;
   width: 414px;
   height: 65px;
-  top: 35px;  /* Position from the top of the container */
+  top: 35px;
   left: 0;
   background-color: #552583;
 }
@@ -424,3 +327,35 @@
 .text-wrapper:hover {
   color: #888; /* Optional: change text color on hover */
 }
+
+.blur-effect {
+  filter: blur(1px);
+  transition: filter 0.3s ease;
+}
+
+.delete-btn {
+  position: absolute;
+  right: -130px; /* Adjust as necessary to position correctly within the task bar */
+  top: 50%; /* Center vertically within the task bar */
+  transform: translateY(-50%); /* Ensure it's centered no matter the height */
+  background: none; /* Remove any background */
+  border: none; /* Remove borders */
+  color: red;
+  cursor: pointer;
+  font-size: 24px; /* Adjust size as necessary */
+  padding: 0; /* Remove padding */
+
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+
+
+
+
+
+
+
+

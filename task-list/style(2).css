@@ -1,5 +1,5 @@
 .add-list {
-    background-color: #f6f6f6;
+    background: linear-gradient(135deg, #8E44AD, #F1Ca0F);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -9,7 +9,7 @@
   .add-list .div {
     background-color: #f6f6f6;
     width: 414px;
-    height: 896px;
+    margin-top: 10px;
     position: relative;
   }
   
