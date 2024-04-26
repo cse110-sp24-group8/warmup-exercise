@@ -52,3 +52,9 @@ td:active {
   color: black;
 }
 
+td:hover {
+  background-color: #FDB927;
+  color: black;
+  transform: scale(1.2,1.2);
+} 
+
