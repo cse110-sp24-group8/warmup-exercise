@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Calendar"/>
-    <meta name="keywords" content="HTML, CSS, JavaSctipt"/>
+    <meta name="keywords" content="HTML, CSS, JavaScript"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="robots" content="noindex, nofollow"/>
     <link rel="stylesheet" href="style/main.css">
+    
+
     <title>Calendar</title>
   </head>
   <body>
@@ -15,90 +17,59 @@
     </header>
     <main>
 
-      <calendar-component>
+       <!--<calendar-component> -->
         <section id="general_title">
           <h2>Calendar</h2>
+        
 
           <section id="month_controls">
-            <button id="prev_month"></button>
-            <h1 id="month_title">Month</h1>
-            <button id="next_month"></button>
+            <button id="prev_month">&lt;</button>
+            <h1 id="month_title"></h1>
+            <button id="next_month">&gt;</button>
           </section>
+    
 
+        <!--
           <section id="year_controls">
-            <button id="prev_year"></button>
+            <button id="prev_year">&lt;</button>
             <h2 id="year_title">Year</h2>
-            <button id="next_year"></button>
-          </section>
+            <button id="next_year">&gt;</button>
+          </section>  -->
 
         </section>
 
-        <section id="date_layouot">
-          <section id="chunk_of_dates">
-            <table>
-              <tr id="days_of_week">
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
-          </section>
-        </section>
+        <!--<section id="date_layouot"> -->
+            <table id="calendar">
+              <thead> 
+                <tr>
+                  <th>Sun</th>
+                  <th>Mon</th>
+                  <th>Tue</th>
+                  <th>Wed</th>
+                  <th>Thu</th>
+                  <th>Fri</th>
+                  <th>Sat</th>
+                </tr>
+              </thead>
+              <tbody id="calendarBody">
+          
+              </tbody>
+          </table>
 
-      </calendar-component>
+          <script src="script.js"></script>
 
+          <noscript>
+            <h2>Please enable JavaScript for functionality!</h2>
+            <style>
+              #month_controls, #calendar {
+                display: none ;
+              }
+            </style>
+          </noscript>
+        <!-- </section> -->
+
+      <!--  </calendar-component> -->
     </main>
+
   </body>
-
-
-
 </html>
