@@ -1,24 +1,32 @@
 /* main.css */
 @import url(var.css);
 
-#days_of_week {
+#month_controls {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  grid-column-end: span 7;
+  align-items: center;
+  justify-content: center;
 }
 
-h3 {
-  border-style: solid;
+#year_controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
 }
 
 #chunk_of_dates {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  
 }
 
-div {
+#month_title {
+  
+  font-size: xx-large;
+}
+
+td {
   border-style: solid;
   padding: 25%;
 }
