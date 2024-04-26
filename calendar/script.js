@@ -5,6 +5,7 @@ let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
 
 // Create a Mapping
+let storedNotes = localStorage.getItem('notes');
 let notes = {};
 
 // Function to display the calendar
@@ -35,7 +36,7 @@ function displayCalendar(month, year) {
         row.appendChild(cell);
       } else {
         // Display date and make it clickable
-        cell.classList.add('can-hover');
+        
         cell.textContent = date;
         cell.dataset.date = `${year}-${month + 1}-${date}`;
 
@@ -47,6 +48,12 @@ function displayCalendar(month, year) {
         cell.addEventListener("click", function() {
           // Handle click event (Add tasks functionality can be implemented here)
           let key = this.dataset.date;
+          if (storedNotes) {
+            notes = JSON.parse(storedNotes);
+          }
+          else {
+            notes = {};
+          }
           if (notes[key] !== undefined) {
             alert(notes[key]);
           }
@@ -55,6 +62,7 @@ function displayCalendar(month, year) {
             if (inputText !== null) {
               // Store the entered text in your mapping
               notes[key] = inputText;
+              localStorage.setItem('notes', JSON.stringify(notes));
             }
           }
         });
