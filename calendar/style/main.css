@@ -5,10 +5,17 @@
   font-size: xx-large;
 }
 
+
+
 #month_controls {
   display: flex;
   align-items: center;
   justify-content: center;
+
+}
+
+#month_title {
+  padding: 10px 10px 40px 10px
 }
 
 #year_controls {
@@ -47,8 +54,14 @@ td p {
 
 }
 
-td:active {
+/*This will highlight whatever date we hover over with our mouse, not sure if implementing */
+
+/* td:hover {
   background-color: #FDB927;
   color: black;
-}
+  transform: scale(1.2,1.2);
+} */
+
+
+
 
