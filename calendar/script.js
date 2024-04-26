@@ -7,6 +7,12 @@ let currentYear = currentDate.getFullYear();
 // Create a Mapping
 let storedNotes = localStorage.getItem('notes');
 let notes = {};
+if (storedNotes) {
+  notes = JSON.parse(storedNotes);
+}
+else {
+  notes = {};
+}
 
 // Function to display the calendar
 function displayCalendar(month, year) {
@@ -48,12 +54,6 @@ function displayCalendar(month, year) {
         cell.addEventListener("click", function() {
           // Handle click event (Add tasks functionality can be implemented here)
           let key = this.dataset.date;
-          if (storedNotes) {
-            notes = JSON.parse(storedNotes);
-          }
-          else {
-            notes = {};
-          }
           if (notes[key] !== undefined) {
             alert(notes[key]);
           }
