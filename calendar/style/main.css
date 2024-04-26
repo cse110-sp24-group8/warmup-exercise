@@ -1,0 +1,54 @@
+/* main.css */
+@import url(var.css);
+
+#month_title {
+  font-size: xx-large;
+}
+
+#month_controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#year_controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: purple;
+  color: white;
+  width: 100%;
+  height: 100%;
+  border-spacing: 1rem;
+}
+
+th {
+  font-weight: bold;
+  width: 2%;
+  height: 10%;
+}
+
+td {
+  font-weight: bold;
+  border-style: solid;
+  padding: 3.2%;
+  position: relative;
+}
+
+td p {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin: 0;
+
+}
+
+td:active {
+  background-color: #FDB927;
+  color: black;
+}
+
