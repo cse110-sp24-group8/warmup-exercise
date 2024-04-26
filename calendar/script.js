@@ -5,6 +5,9 @@ let currentDate = new Date();
 let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
 
+// Create a Mapping
+let notes = {};
+
 // Function to display the calendar
 function displayCalendar(month, year) {
   let firstDay = new Date(year, month, 1);
@@ -16,7 +19,7 @@ function displayCalendar(month, year) {
 
   // Display the month and year
   document.getElementById("month_title").textContent = `${month + 1}/${year}`;
-
+  
   // Generate calendar dates
   let date = 1;
   for (let i = 0; i < 6; i++) {
@@ -36,7 +39,17 @@ function displayCalendar(month, year) {
         cell.dataset.date = `${year}-${month + 1}-${date}`;
         cell.addEventListener("click", function() {
           // Handle click event (Add tasks functionality can be implemented here)
-          alert(`Clicked on ${this.dataset.date}`);
+          let key = this.dataset.date;
+          if (notes[key] !== undefined) {
+            alert(notes[key]);
+          }
+          else {
+            let inputText = prompt("Please enter the text:");
+            if (inputText !== null) {
+              // Store the entered text in your mapping
+              notes[key] = inputText;
+            }
+          }
         });
         row.appendChild(cell);
         date++;
