@@ -42,7 +42,7 @@ function displayCalendar(month, year) {
         //   // Handle click event (Add tasks functionality can be implemented here)
         //   alert(`Clicked on ${this.dataset.date}`);
         // });
-
+        
         cell.addEventListener("click", function() {
           // Handle click event (Add tasks functionality can be implemented here)
           let key = this.dataset.date;

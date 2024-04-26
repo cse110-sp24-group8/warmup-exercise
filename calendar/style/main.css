@@ -1,10 +1,15 @@
 /* main.css */
 @import url(var.css);
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+/* Changed font style */
+*{
+    font-family: "Quicksand";
+}
 
 #month_title {
   font-size: xx-large;
 }
-
 
 
 #month_controls {
@@ -26,17 +31,21 @@
 
 table {
   border-collapse: collapse;
-  background-color: purple;
+  background-image: linear-gradient(to bottom right, #56118b, #b499d6);
+  /*background-color: purple;*/
   color: white;
   width: 100%;
   height: 100%;
   border-spacing: 1rem;
+
 }
 
 th {
   font-weight: bold;
   width: 2%;
   height: 10%;
+  
+  
 }
 
 td {
@@ -44,7 +53,10 @@ td {
   border-style: solid;
   padding: 3.2%;
   position: relative;
+  border-width: 0.5px;
+  
 }
+
 
 td p {
   display: block;
@@ -53,6 +65,7 @@ td p {
   margin: 0;
 
 }
+
 
 /*This will highlight whatever date we hover over with our mouse, not sure if implementing */
 
@@ -64,4 +77,57 @@ td p {
 
 
 
+/*#calendar {
+  background-image: linear-gradient(to bottom right, #5a168d, #b499d6);
+}*/
+
+
+/* Adjust back and forward container styling  */
+#month_controls{
+  text-align: center;
+  position: relative;
+  line-height: 20px;
+  color: rgb(255, 245, 245);
+  height: 150px;
+  background-color: rgb(52,8,84);
+  transition: background-color 0.3s;
+}
+#prev_month {
+  border: none;
+  background-color: rgb(52,8,84);
+}
+/* Square box behind in the actual button match color with background to blend in*/
+#next_month{
+  border: none;
+  background-color: rgb(52,8,84);
+}
+
+/* Styles the previous button and forward button  */
+
+/* "text" of circle button for prevMonth and nextMonth */
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 4px 16px;
+}
+/* Changing the color of the arrow when you hover them insuinating a "click"*/
+a:hover {
+  background-color: #a76fdb;
+  color: rgb(0, 0, 0);
+} 
+/* controls circle shap you see on the website for the "back" option*/
+.previous {
+  background-color: #a76fdb;
+  color: white;
+}
+/* controls circle shap you see on the website for the "forward" option*/
+.next {
+  background-color: #a76fdb;
+  color: white;
+}
+/* gets the round shape of the back and forward buttons */
+.round {
+  border-radius: 50%;
+
+}
 
