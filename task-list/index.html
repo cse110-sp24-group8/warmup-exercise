@@ -61,98 +61,9 @@
         </div>
       </div>
     </div>
-    <script>
-      //adding task to the list 
-      document.addEventListener("DOMContentLoaded", function() {
-        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        const tasksContainer = document.querySelector('.tasks-container');
-    
-        tasksContainer.innerHTML = '';
-    
-        tasks.forEach(task => {
-            const newTaskHtml = `
-                <div class="overlap" data-id="${task.id}">
-                    <div class="group">
-                        <label class="checkbox-container">
-                            <input type="checkbox" class="rectangle-checkbox" ${task.completed ? 'checked' : ''}>
-                            <span class="rectangle"></span>
-                            <div class="text-wrapper">${task.text}</div>
-                            <button class="delete-btn">&#x2716;</button>
-                        </label>
-                    </div>
-                </div>
-            `;
-            tasksContainer.insertAdjacentHTML('beforeend', newTaskHtml);
-        });
-    });    
-    </script>
-
-    <script>
-      //bluring the task-list bar and move the task to the bottom of the list
-      document.addEventListener("DOMContentLoaded", function() {
-        const tasksContainer = document.querySelector('.tasks-container');
-        const tasks = document.querySelectorAll('.group');
-    
-        tasks.forEach(task => {
-          const checkbox = task.querySelector('.rectangle-checkbox');
-          const textWrapper = task.querySelector('.text-wrapper');
-    
-          // Function to handle checkbox change event
-          function handleCheckboxChange() {
-            if (checkbox.checked) {
-              textWrapper.classList.add('text-completed');
-              setTimeout(() => {
-                task.parentElement.classList.add('blur-effect');
-                tasksContainer.appendChild(task.parentElement);
-              }, 300);
-            } else {
-              textWrapper.classList.remove('text-completed');
-              task.parentElement.classList.remove('blur-effect');
-            }
-          }
-    
-          // Function to handle text-wrapper click event
-          function handleTextWrapperClick(event) {
-            event.stopPropagation(); // Prevent checkbox click event from firing
-          }
-    
-          // Add event listener for checkbox change event
-          checkbox.addEventListener('change', handleCheckboxChange);
-    
-          // Add event listener for text-wrapper click event
-          textWrapper.addEventListener('click', handleTextWrapperClick);
-        });
-      });
-    </script>
-
-    <script>
-      //delete button functionality
-      document.addEventListener("DOMContentLoaded", function() {
-        const tasksContainer = document.querySelector('.tasks-container');
-    
-        tasksContainer.addEventListener('click', function(event) {
-            if (event.target.classList.contains('delete-btn')) {
-                const taskElement = event.target.closest('.overlap');
-                const taskId = parseInt(taskElement.dataset.id); // Make sure IDs are integers
-                let tasks = JSON.parse(localStorage.getItem('tasks'));
-                tasks = tasks.filter(task => task.id !== taskId);
-                localStorage.setItem('tasks', JSON.stringify(tasks));
-                taskElement.remove();
-            }
-        });
-    });
-    
-    
-    </script>
-    
-    
-    
-        
-    
 
     
-    
-      
+    <script src="script.js"></script>     
   </body>
 
 </html>

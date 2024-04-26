@@ -19,7 +19,7 @@ html, body {
 
 .to-do-list .div {
   background-color: #f6f6f6;
-  overflow: auto;
+  overflow: hidden;
   width: 414px;
   height: 100vh;
   position: relative;
@@ -350,12 +350,3 @@ html, body {
 .delete-btn:hover {
   background-color: darkred;
 }
-
-
-
-
-
-
-
-
-

@@ -12,8 +12,6 @@
         <div class="overlap-group">
           <input type="text" class="text-wrapper" placeholder="Title...">
           <img class="vector" src="img/vector-3.svg" />
-          <div class="group"><div class="text-wrapper-2">To do...</div></div>
-          <input type="checkbox" class="rectangle">
           <button class="frame">Add</button>
           
           <a href="index.html">
@@ -28,48 +26,6 @@
         </div>
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          const addButton = document.querySelector('.frame');
-          if (!addButton) {
-              console.error('Add button not found');
-              return; // Stop execution if addButton is not found
-          }
-      
-          addButton.addEventListener('click', function(event) {
-              event.preventDefault(); 
-      
-              const inputField = document.querySelector('.text-wrapper');
-              if (!inputField) {
-                  console.error('Input field not found');
-                  return; 
-              }
-      
-              const inputText = inputField.value; // Get the value from the text input
-              console.log('Adding task:', inputText); // Log input for debugging
-      
-              if (inputText.trim() !== "") {
-                  let tasks = JSON.parse(localStorage.getItem('tasks')) || []; // Retrieve tasks array or initialize it
-                  const newTask = {
-                      id: Date.now(), // Unique identifier for each task
-                      text: inputText,
-                      completed: false // Track completion status
-                  };
-                  tasks.push(newTask); // Add new task to array
-                  localStorage.setItem('tasks', JSON.stringify(tasks)); // Store updated array back to localStorage
-                  window.location.href = 'index.html'; // Redirect to index.html
-              } else {
-                  alert('Please enter a task name.');
-              }
-          });
-      });
-      </script>
-      
-    
-    
-      
-
-
+    <script src="script.js"></script>  
   </body>
 </html>

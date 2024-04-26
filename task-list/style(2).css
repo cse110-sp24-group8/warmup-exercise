@@ -1,3 +1,7 @@
+body{
+  background: linear-gradient(135deg, #8E44AD, #F1Ca0F);
+}
+
 .add-list {
     background: linear-gradient(135deg, #8E44AD, #F1Ca0F);
     display: flex;
