@@ -76,12 +76,6 @@ td p {
 } */
 
 
-
-/*#calendar {
-  background-image: linear-gradient(to bottom right, #5a168d, #b499d6);
-}*/
-
-
 /* Adjust back and forward container styling  */
 #month_controls{
   text-align: center;
@@ -131,8 +125,10 @@ a:hover {
 
 }
 
-td.can-hover:hover {
+/* Test to highlight boxes when clicked not an active working feature */
+
+/* td.can-hover:hover {
   background-color: #FDB927;
   color: black;
   transform: scale(1.2,1.2);
-} 
+}  */
