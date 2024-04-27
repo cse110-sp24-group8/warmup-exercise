@@ -5,7 +5,14 @@ let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
 
 // Create a Mapping
+let storedNotes = localStorage.getItem('notes');
 let notes = {};
+if (storedNotes) {
+  notes = JSON.parse(storedNotes);
+}
+else {
+  notes = {};
+}
 
 // Function to display the calendar
 function displayCalendar(month, year) {
@@ -35,6 +42,7 @@ function displayCalendar(month, year) {
         row.appendChild(cell);
       } else {
         // Display date and make it clickable
+        
         cell.textContent = date;
         cell.dataset.date = `${year}-${month + 1}-${date}`;
 
@@ -42,7 +50,7 @@ function displayCalendar(month, year) {
         //   // Handle click event (Add tasks functionality can be implemented here)
         //   alert(`Clicked on ${this.dataset.date}`);
         // });
-
+        
         cell.addEventListener("click", function() {
           // Handle click event (Add tasks functionality can be implemented here)
           let key = this.dataset.date;
@@ -54,6 +62,7 @@ function displayCalendar(month, year) {
             if (inputText !== null) {
               // Store the entered text in your mapping
               notes[key] = inputText;
+              localStorage.setItem('notes', JSON.stringify(notes));
             }
           }
         });
@@ -99,8 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to reset the style of all calendar squares
   function resetSquares() {
     allSquares.forEach(square => {
-      square.style.transform = 'scale(1)';
-      square.style.backgroundColor = 'purple'; // Adjust color as needed
+      // square.style.transform = 'scale(1)';
       square.style.zIndex = '0';
     });
   }
@@ -111,11 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (target.tagName === 'TD') {
       // Reset all squares
       resetSquares();
-
       // Enlarge the clicked square
       target.style.transform = 'scale(1.2)';
-      // Change color of the clicked square
-      target.style.backgroundColor = 'orange';
       target.style.zIndex = '1';
     }
   });
