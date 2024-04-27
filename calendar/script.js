@@ -42,14 +42,8 @@ function displayCalendar(month, year) {
         row.appendChild(cell);
       } else {
         // Display date and make it clickable
-        
         cell.textContent = date;
         cell.dataset.date = `${year}-${month + 1}-${date}`;
-
-        // cell.addEventListener("click", function() {
-        //   // Handle click event (Add tasks functionality can be implemented here)
-        //   alert(`Clicked on ${this.dataset.date}`);
-        // });
         
         cell.addEventListener("click", function() {
           // Handle click event (Add tasks functionality can be implemented here)
